@@ -212,7 +212,11 @@
     <Compile Include="Configuration\AppSettingNames.cs" />
     <Compile Include="Configuration\AppSettingProvider.cs" />
     <Compile Include="Editions\EditionManager.cs" />
+    <Compile Include="entity\Person.cs" />
+    <Compile Include="entity\Task.cs" />
+    <Compile Include="enums\TaskState.cs" />
     <Compile Include="Features\FeatureValueStore.cs" />
+    <Compile Include="IRepository\ITaskRepository.cs" />
     <Compile Include="MultiTenancy\Tenant.cs" />
     <Compile Include="MultiTenancy\TenantManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

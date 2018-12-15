@@ -220,6 +220,7 @@
     <Compile Include="EntityFramework\ABPDemoProjectDbContext.cs" />
     <Compile Include="EntityFramework\Repositories\ABPDemoProjectRepositoryBase.cs" />
     <Compile Include="ABPDemoProjectDataModule.cs" />
+    <Compile Include="EntityFramework\Repositories\TaskRepository.cs" />
     <Compile Include="Migrations\201809270654064_InitialMigrations.cs" />
     <Compile Include="Migrations\201809270654064_InitialMigrations.Designer.cs">
       <DependentUpon>201809270654064_InitialMigrations.cs</DependentUpon>
@@ -227,6 +228,14 @@
     <Compile Include="Migrations\201810150846132_Upgraded_To_ABP_v3_9_0.cs" />
     <Compile Include="Migrations\201810150846132_Upgraded_To_ABP_v3_9_0.Designer.cs">
       <DependentUpon>201810150846132_Upgraded_To_ABP_v3_9_0.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812131403297_InitialCreate.cs" />
+    <Compile Include="Migrations\201812131403297_InitialCreate.Designer.cs">
+      <DependentUpon>201812131403297_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812131443554_InitialCreate1.cs" />
+    <Compile Include="Migrations\201812131443554_InitialCreate1.Designer.cs">
+      <DependentUpon>201812131443554_InitialCreate1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\AbpZeroDbMigrator.cs" />
     <Compile Include="Migrations\Configuration.cs" />
@@ -255,6 +264,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201810150846132_Upgraded_To_ABP_v3_9_0.resx">
       <DependentUpon>201810150846132_Upgraded_To_ABP_v3_9_0.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812131403297_InitialCreate.resx">
+      <DependentUpon>201812131403297_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812131443554_InitialCreate1.resx">
+      <DependentUpon>201812131443554_InitialCreate1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

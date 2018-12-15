@@ -3,6 +3,7 @@ using System.Data.Entity;
 using Abp.Zero.EntityFramework;
 using ABPDemoProject.Authorization.Roles;
 using ABPDemoProject.Authorization.Users;
+using ABPDemoProject.entity;
 using ABPDemoProject.MultiTenancy;
 
 namespace ABPDemoProject.EntityFramework
@@ -16,6 +17,9 @@ namespace ABPDemoProject.EntityFramework
          *   But it may cause problems when working Migrate.exe of EF. If you will apply migrations on command line, do not
          *   pass connection string name to base classes. ABP works either way.
          */
+
+        public virtual IDbSet<Task> Tasks { get; set; }
+        public virtual IDbSet<Person> People { get; set; }
         public ABPDemoProjectDbContext()
             : base("Default")
         {

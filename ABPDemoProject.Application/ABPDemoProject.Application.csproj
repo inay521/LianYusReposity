@@ -225,6 +225,11 @@
     <Compile Include="Configuration\IConfigurationAppService.cs" />
     <Compile Include="Configuration\Ui\UiThemeInfo.cs" />
     <Compile Include="Configuration\Ui\UiThemes.cs" />
+    <Compile Include="DTO\CreateTaskInput.cs" />
+    <Compile Include="DTO\GetTasksOutput.cs" />
+    <Compile Include="DTO\GetTasksInput.cs" />
+    <Compile Include="IService\ITaskAppService.cs" />
+    <Compile Include="IService\UpdateTaskInput.cs" />
     <Compile Include="MultiTenancy\Dto\CreateTenantDto.cs" />
     <Compile Include="MultiTenancy\Dto\EditTenantDto.cs" />
     <Compile Include="MultiTenancy\Dto\TenantDto.cs" />
@@ -235,6 +240,8 @@
     <Compile Include="Roles\Dto\PermissionDto.cs" />
     <Compile Include="Roles\Dto\RoleDto.cs" />
     <Compile Include="Roles\IRoleAppService.cs" />
+    <Compile Include="Service\TaskAppService.cs" />
+    <Compile Include="Service\TaskDto.cs" />
     <Compile Include="Users\Dto\CreateUserDto.cs" />
     <Compile Include="Users\Dto\UpdateUserDto.cs" />
     <Compile Include="Users\Dto\UserDto.cs" />

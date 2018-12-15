@@ -1,6 +1,7 @@
 using System.Data.Entity.Migrations;
 using Abp.MultiTenancy;
 using Abp.Zero.EntityFramework;
+using ABPDemoProject.entity;
 using ABPDemoProject.Migrations.SeedData;
 using EntityFramework.DynamicFilters;
 
@@ -19,6 +20,11 @@ namespace ABPDemoProject.Migrations
         protected override void Seed(ABPDemoProject.EntityFramework.ABPDemoProjectDbContext context)
         {
             context.DisableAllFilters();
+
+            context.People.AddOrUpdate(p=>p.Name,
+                new Person {Name="Zhangsan" },
+                new Person { Name = "Lisi" },
+                new Person { Name = "wangwu" });
 
             if (Tenant == null)
             {
