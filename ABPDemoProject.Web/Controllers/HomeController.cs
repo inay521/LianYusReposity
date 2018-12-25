@@ -8,6 +8,7 @@ namespace ABPDemoProject.Web.Controllers
     {
         public ActionResult Index()
         {
+            Logger.Debug("A sample log message...");
             return View("~/App/Main/views/layout/layout.cshtml"); //Layout of the angular application.
         }
 	}

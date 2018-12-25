@@ -53,6 +53,9 @@ namespace ABPDemoProject.EntityFramework
         {
             base.OnModelCreating(modelBuilder);
 
+            //全局约定   定义name为Id的键为主键
+            modelBuilder.Properties().Where(p => p.Name == "Id").Configure(config=>config.IsKey());
+
         }
     }
 }

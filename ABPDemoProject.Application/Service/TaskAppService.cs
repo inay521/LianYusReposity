@@ -4,6 +4,7 @@ using ABPDemoProject.DTO;
 using ABPDemoProject.entity;
 using ABPDemoProject.IService;
 using AutoMapper;
+using Castle.Core.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,9 @@ namespace ABPDemoProject.Service
         private readonly ITaskRepository _taskRepository;
         private readonly IRepository<Person> _personRepository;
 
+        //这里先定义了一个ILogger类型的public属性Logger，这个对象就是我们用来记录日志的对象。在创建了TaskAppService对象（就是我们应用中定义的任务）以后，通过属性注入的方式来实现。
+        public ILogger loger { get; set; }
+
         /// <summary>
         /// 构造函数自动注入我们所需要的类或接口
         /// </summary>
@@ -25,18 +29,24 @@ namespace ABPDemoProject.Service
         {
             _taskRepository = taskRepository;
             _personRepository = personRepository;
-        }
-        public GetTasksOutput getTasks(GetTasksInput input)
-        {
-            //调用Task仓储的特定方法GetAllWithPeople
-            var tasks = _taskRepository.GetAllWithPeople(input.AssignedPersonId, input.State);
 
-            //用AutoMapper自动将List<Task>转换成List<TaskDto>
-            return new GetTasksOutput
-            {
-                Tasks = Mapper.Map<List<TaskDto>>(tasks)
-            };
+            //3: 如果没有日志记录器，将日志记录器返回一个空的实例，不写日志。这是依赖注入的最佳实现方式，
+            //   如果你不定义这个空的日志记录器，当我们获取对象引用并且实例化的时候，就会产生异常。
+            //   这么做，保证了对象不为空。所以，换句话说，不设置日志记录器，就不记录日志，返回一个null的对象。
+            //   NullLogger对象实际上什么都木有，空的。这么做，才能保证我们定义的类在实例化时正常运作。
+            loger = NullLogger.Instance;
         }
+        //public GetTasksOutput getTasks(GetTasksInput input)
+        //{
+        //    //调用Task仓储的特定方法GetAllWithPeople
+        //    var tasks = _taskRepository.GetAllWithPeople(input.AssignedPersonId, input.State);
+
+        //    //用AutoMapper自动将List<Task>转换成List<TaskDto>
+        //    return new GetTasksOutput
+        //    {
+        //        Tasks = Mapper.Map<List<TaskDto>>(tasks)
+        //    };
+        //}
 
         public void UpdateTask(UpdateTaskInput input)
         {
